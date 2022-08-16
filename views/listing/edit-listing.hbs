@@ -1,0 +1,19 @@
+<br>
+<h2>Edit Listing</h2>
+
+<form action="/listing/edit-listing/{{listing._id}}" method="POST">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{listing.name}}">
+    </div>
+    <div class="form-group">
+        <label for="home">Home</label>
+        <input type="text" class="form-control" id="home" name="home" value="{{listing.home}}">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" rows="4" class="form-control" id="description" value="{{listing.description}}"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-outline-dark">Save Changes</button>
+</form>

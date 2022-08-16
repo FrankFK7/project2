@@ -1,2 +1,41 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+{{#if errorMessage}}
+    <div class='alert alert-danger'>{{errorMessage}}</div>
+{{/if}}
+<br>
+<div id='signup' hidden>
+        <h3>Sign up</h3>
+        <form action='/auth/signup' method='POST'>
+            <label>
+                Username
+                <input type='text' name='username' />
+            </label>
+            <label>
+                Email
+                <input type='text' name='email' />
+            </label>
+            <label>
+                Password
+                <input type='password' name='password' />
+            </label>
+
+            <button type='submit' class="btn btn-outline-dark btn-sm" type='submit'>Submit</button>
+        </form>
+        <a href='#' onclick='switchForm(event)'>Login</a>
+    </div>
+
+ <div id='login'>
+    <h3>Login</h3>
+    <form action='/auth/login' method='POST'>
+        <label>
+            Username
+            <input type='text' name='username' />
+        </label>
+        <label>
+            Password
+            <input type='password' name='password' />
+        </label>
+
+        <button type='submit' class="btn btn-outline-dark btn-sm" type='submit'>Submit</button>
+    </form>
+    <a href='#' onclick='switchForm(event)'>Signup</a>
+</div>

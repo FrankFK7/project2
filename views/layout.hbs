@@ -1,19 +1,97 @@
-<!DOCTYPE html>
 <html lang="en">
 
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>{{appTitle}}</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
-   </head>
+  <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>{{appTitle}}</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+  integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-   <body>
+  <body>
+<header class="mb-3">
 
-      {{{body}}}
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+  <a class="navbar-brand" href="/">{{appTitle}}🏠<span></span></a>
+  <button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarTogglerDemo02"
+aria-controls="navbarTogglerDemo02"
+aria-expanded="false"
+aria-label="Toggle navigation"
+  >
+<span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  {{#if userInSession}}
+<li class="nav-item">
+  <a class="nav-link active" href="/profile">My Profile</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/homes/my-homes">My Homes</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/listing/my-listings">My Listings</a>
+</li>
+  {{/if}}
+</ul>
+<form action="/homes/searched-home" method="GET">
+  <label for="searchTerm"></label>
+  <div class="input-group">
+<input
+  class="form-control form-control-sm"
+  type="text"
+  name="searchTerm"
+  class="form-control rounded"
+  placeholder="Search..."
+  aria-label="Search"
+/>
+<br />
+<button
+  type=""
+  class="btn btn-outline-dark btn-sm"
+>search</button>
+  </div>
+</form>
+  </div>
+  <ul class="nav justify-content-end" class="text-secondary">
+<li class="nav-item">
+  <a class="nav-link" href="/contact">Contact Us</a>
+</li>
+{{#if userInSession}}
+  <li class="nav-item">
+<a class="nav-link" href="/auth/logout">Logout</a>
+  </li>
+{{/if}}
+  </ul>
+</div>
+  </nav>
 
-      <script src="/js/script.js"></script>
-   </body>
+</header>
+
+{{{body}}}
+
+<script
+  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+  crossorigin="anonymous"
+></script>
+<script src="/js/script.js"></script>
+  </body>
 
 </html>

@@ -1,0 +1,16 @@
+<br>
+    <div class="card">
+  <h5 class="card-header">{{listing.name}}</h5>
+  <div class="card-body">
+    <h6 class="card-title">{{listing.home}}</h6>
+    <p class="card-text">{{listing.description}}</p>
+    <div class="mb-3">
+            <form action="/listings/edit-listing/{{listing._id}}" method="GET">
+                <button type="submit" class="btn btn-outline-dark">Edit</button>
+            </form>
+            <form action="/listings/{{listing._id}}/delete-listing" method="POST">
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+            </form>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<br>
+<h2>My Listings</h2> <br>
+
+<form action="create-listing" method="GET">
+<button type='submit' class="btn btn-outline-dark btn-sm" type="submit" data-toggle="modal" data-target="#create-listing">
+    Create a Listing
+</button>
+</form>
+
+{{#each listings}}
+<div class="card">
+  <h5 class="card-header">{{name}}</h5>
+  <div class="card-body">
+    <h6 class="card-title">{{home}}</h6>
+<a href="listing-details/{{id}}" class="btn btn-outline-dark btn-sm">View</a>  </div>
+</div>
+{{/each}}
